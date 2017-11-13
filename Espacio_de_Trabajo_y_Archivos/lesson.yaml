@@ -205,4 +205,9 @@
 - Class: text
   Output: "En esta lección, ha aprendido a examinar su espacio de trabajo en R y a trabajar con el sistema de archivos de su máquina desde dentro R. Gracias por jugar!"
 
-
+- Class: mult_question
+  Output: ¿Te gustaría que tu instructor te evalue la lección?
+  CorrectAnswer: NULL
+  AnswerChoices: Yes; No
+  AnswerTests: notify()
+  Hint: NULL

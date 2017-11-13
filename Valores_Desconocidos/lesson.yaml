@@ -1,5 +1,5 @@
 - Class: meta
-  Course: Programando en R
+  Course: Programación en R
   Lesson: Valores Desconocidos
   Author: Nick Carchedi
   Type: Standard
@@ -7,7 +7,7 @@
   Version: 2.2.0
 
 - Class: text
-  Output: Los valores faltantes juegan un papel importante en las estadísticas y análisis de datos. A menudo, los valores perdidos no deben ser ignoradas, sino que deben ser estudiados cuidadosamente para ver si hay un patrón subyacente o causa para su falta.
+  Output: Los valores desconocidos juegan un papel importante en las estadísticas y análisis de datos. A menudo, los valores perdidos no deben ser ignoradas, sino que deben ser estudiados cuidadosamente para ver si hay un patrón subyacente o causa para su falta.
 
 - Class: text
   Output: En R, NA se utiliza para representar cualquier valor que es "no disponible" o "perdido" (en el sentido estadístico). En esta lección, vamos a explorar los valores que faltan más.
@@ -102,5 +102,10 @@
   AnswerTests: omnitest(correctExpr='Inf - Inf')
   Hint: Escriba Inf - Inf. ¿Puedes adivinar el resultado?
   
-
+- Class: mult_question
+  Output: ¿Te gustaría que tu instructor te evalue la lección?
+  CorrectAnswer: NULL
+  AnswerChoices: Yes; No
+  AnswerTests: notify()
+  Hint: NULL
 

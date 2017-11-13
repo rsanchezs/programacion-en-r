@@ -274,3 +274,10 @@
   
 - Class : text
   Output: "Eso es todo en relación a esta introducción a la lógica en R. Si realmente quieres ver todo lo que puede hacer con la lógica, echa un vistazo a la lección sobre flujos de control!"
+
+- Class: mult_question
+  Output: ¿Te gustaría que tu instructor te evalue la lección?
+  CorrectAnswer: NULL
+  AnswerChoices: Yes; No
+  AnswerTests: notify()
+  Hint: NULL
