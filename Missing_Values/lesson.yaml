@@ -1,0 +1,106 @@
+- Class: meta
+  Course: Programando en R
+  Lesson: Valores Desconocidos
+  Author: Nick Carchedi
+  Type: Standard
+  Organization: JHU Biostat
+  Version: 2.2.0
+
+- Class: text
+  Output: Los valores faltantes juegan un papel importante en las estadísticas y análisis de datos. A menudo, los valores perdidos no deben ser ignoradas, sino que deben ser estudiados cuidadosamente para ver si hay un patrón subyacente o causa para su falta.
+
+- Class: text
+  Output: En R, NA se utiliza para representar cualquier valor que es "no disponible" o "perdido" (en el sentido estadístico). En esta lección, vamos a explorar los valores que faltan más.
+
+- Class: cmd_question
+  Output: Cualquier operación que implique algún NA generalmente produce como resultado NA. Para ilustrar esto, vamos a crear un vector c(44, NA, 5, NA) y asignarlo a una variable x.
+  CorrectAnswer: x <- c(44, NA, 5, NA)
+  AnswerTests: omnitest(correctExpr='x <- c(44, NA, 5, NA)')
+  Hint: Asigne el vector c(44, NA, 5, NA) a una variable x. La NA debe estar en mayúsculas.
+
+- Class: cmd_question
+  Output: Ahora, vamos a multiplicar x por 3.
+  CorrectAnswer: x * 3
+  AnswerTests: ANY_of_exprs('x * 3', '3 * x')
+  Hint: Pruebe x * 3.
+
+- Class: text
+  Output: Observe que los elementos del vector resultante que se corresponden con los valores de NA en x son también NA.
+
+- Class: cmd_question
+  Output: Para hacer las cosas un poco más interesante, vamos a crear un vector que contiene 1000 sorteos de una distribución normal estándar (media en 0 y desviación estándar en 1) con y <- rnorm(1000).
+  CorrectAnswer: y <- rnorm(1000)
+  AnswerTests: omnitest(correctExpr='y <- rnorm(1000)')
+  Hint: La función rnorm() genera números aleatorios de una distribución normal. Escriba y <- rnorm(1000).
+
+- Class: cmd_question
+  Output: A continuación, vamos a crear un vector que contiene 1000 NAs con z <- rep(NA, 1000).
+  CorrectAnswer: z <- rep(NA, 1000)
+  AnswerTests: omnitest(correctExpr='z <- rep(NA, 1000)')
+  Hint: Escriba z <- rep(NA, 1000) para generar un vector de 1000 NAs.
+
+- Class: cmd_question
+  Output: Por último, vamos a seleccionar 100 elementos al azar de estos 2000 valores (combinando y, z) de modo que no sabemos con cuántos NA vamos a terminar o qué posiciones van a ocupar en nuestro vector final -- my_data <- sample(c(y, z), 100).
+  CorrectAnswer: my_data <- sample(c(y, z), 100)
+  AnswerTests: omnitest(correctExpr='my_data <- sample(c(y, z), 100)')
+  Hint: La función de sample() genera una muestra aleatoria de los datos facilitados como primer argumento (en este caso c (y, z)) del tamaño especificado por el segundo argumento (100). El comando my_data <- sample(c(y, z), 100) nos dará lo que queremos.
+
+- Class: cmd_question
+  Output: Primero vamos a hacer la pregunta de dónde se encuentran los NA en nuestros datos. La función is.na() nos dice si cada elemento de un vector es NA. Llame a is.na() en my_data y asigne el resultado a my_na.
+  CorrectAnswer: my_na <- is.na(my_data)
+  AnswerTests: omnitest(correctExpr='my_na <- is.na(my_data)')
+  Hint: Asigne el resultado de is.na(my_data) a la variable my_na.
+
+- Class: cmd_question
+  Output: Ahora, imprima my_na para ver lo que le ocurrió.
+  CorrectAnswer: my_na
+  AnswerTests: omnitest(correctExpr='my_na')
+  Hint: Escriba my_na para ver su contenido.
+
+- Class: text
+  Output: En todas partes donde se ve un TRUE, se sabes el elemento correspondiente de my_data es NA. Del mismo modo, en todas partes se ve un FALSE, ya sabes el elemento correspondiente de my_data es uno de nuestros sorteos al azar de la distribución normal estándar.
+
+- Class: cmd_question
+  Output: En nuestra discusión previa de los operadores lógicos, introdujimos el operador `==` como un método de prueba para la igualdad entre dos objetos. Así, se podría pensar que la expresión my_data == NA produce los mismos resultados que is.na(). Dese una oportunidad.
+  CorrectAnswer: my_data == NA
+  AnswerTests: omnitest(correctExpr='my_data == NA')
+  Hint: Pruebe my_data == NA para ver qué pasa.
+
+- Class: text
+  Output: La razón por la que recibió un vector de todos sus valores en NAs es que NA no es realmente un valor, es sólo un marcador de posición para una cantidad que no está disponible. Por lo tanto la expresión lógica esta incompleta y R no tiene más remedio que volver un vector de la misma longitud que my_data que contiene solo NAs.
+
+- Class: text
+  Output: No se preocupe si eso es un poco confuso. La conclusión clave es ser cauteloso al usar expresiones lógicas, en cualquier momento un NA podría colarse, recuerde que un solo valor NA puede descarrilar toda la operación.
+
+- Class: text
+  Output: Así que, volviendo a la tarea en cuestión. Ahora que tenemos un vector my_na, que tiene una verdad para cada NA y FALSE para cada valor numérico, podemos calcular el número total de NAs en nuestros datos.
+
+- Class: text
+  Output: El truco es reconocer que debajo de la superficie, R representa TRUE como el número 1 y FALSE como el número 0. Por lo tanto, si tomamos la suma de un montón de TRUEs y FALSEs, obtenemos el número total de TRUEs.
+
+- Class: cmd_question
+  Output: Vamos a hacer una prueba aquí. Llame a la función sum() en my_na para contar el número total de TRUEs en my_na, y por lo tanto el número total de NAs en my_data. No asigne el resultado de una nueva variable.
+  CorrectAnswer: sum(my_na)
+  AnswerTests: omnitest(correctExpr='sum(my_na)')
+  Hint: Utilice sum(my_na) para contar el número de NAs en los datos.
+
+- Class: cmd_question
+  Output: Bastante bien, ¿eh? Por último, vamos a echar un vistazo a los datos para convencernos de que todo 'suma'. Imprimir my_data en la consola.
+  CorrectAnswer: my_data
+  AnswerTests: omnitest(correctExpr='my_data')
+  Hint: Imprimir my_data a la consola.
+
+- Class: cmd_question
+  Output: Ahora que tenemos los NA al dedillo, echemos un vistazo a un segundo tipo de valor faltante, el NaN, que significa 'no es un número ". Para generar NaN, intente dividir (utilizando una barra inclinada) 0 entre 0 ahora.
+  CorrectAnswer: 0/0
+  AnswerTests: omnitest(correctExpr='0/0')
+  Hint: Intente 0/0.
+
+- Class: cmd_question
+  Output: Vamos a hacer una más, sólo por diversión. En R, Inf significa infinito. ¿Qué sucede si se resta de Inf de Inf?
+  CorrectAnswer: Inf - Inf
+  AnswerTests: omnitest(correctExpr='Inf - Inf')
+  Hint: Escriba Inf - Inf. ¿Puedes adivinar el resultado?
+  
+
+
