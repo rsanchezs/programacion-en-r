@@ -1,11 +1,11 @@
-Conceptos Básicos
+Conceptos Basicos
 Espacio de Trabajo y Archivos
-Secuencias de Números
+Secuencias de Numeros
 Vectores
 Valores Desconocidos
 Selección de Elementos en Vectores
 Matrices y Dataframes
-Operaciones Lógicas en R
+Operaciones Logicas en R
 Funciones
 lapply_and_sapply
 vapply_and_tapply
