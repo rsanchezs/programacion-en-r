@@ -1,10 +1,10 @@
-# Programando en R
+# Programación en R
 
 Traducción al español del curso [R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt) de [swirl](http://swirlstats.com/) sobre fundamentos de la programación en R. 
 
 **Descripción**
 
-El paquete de R [swirl](http://swirlstats.com/)("Learn R, in R") permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciiones directamente en R en la medida que avanza su curso. Existen varios cursor en el [repositorio de swirl](https://github.com/swirldev/swirl_courses), pero todos están en ingles.
+El paquete de R [swirl](http://swirlstats.com/)("Learn R, in R") permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciones directamente en R en la medida que avanza su curso. Existen varios cursos en el [repositorio de swirl](https://github.com/swirldev/swirl_courses), pero todos están en ingles.
 
 **Objetivo**
 
@@ -12,7 +12,7 @@ El objetivo de este proyecto es disponer un curso interactivo sobre los fundamen
 
 **Prerrequisitos**
 
-Para acceder a este curso debes tener instalado el [R](https://cran.rstudio.com/), y preferiblemente [Rstudio](https://www.rstudio.com/products/rstudio/download/), así como el paquete [swirl](http://swirlstats.com/). Puedes instalarlo desde la consola de R así:
+Para acceder a este curso debes tener instalado  [R](https://cran.rstudio.com/), y preferiblemente [Rstudio](https://www.rstudio.com/products/rstudio/download/), así como el paquete [swirl](http://swirlstats.com/). Puedes instalarlo desde la consola de R como se muestra a continuación:
 
 ```{r}
 install.packages('swirl')
@@ -20,7 +20,7 @@ install.packages('swirl')
 
 **¿Como ejecutar el curso?**
 
-Para realizar este curso debemos primero instalarlo desde su repositorio en github en la consola de R, así:
+Para realizar este curso debemos primero instalarlo desde su repositorio en github en la consola de R, con las siguientes instrucciones:
 
 ```{r}
 library(swirl)
