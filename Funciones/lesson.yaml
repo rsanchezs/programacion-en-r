@@ -203,7 +203,7 @@
 
 - Class: cmd_question
   Output: "Es hora de utilizar su función mad_libs. Asegúrese de nombrar los argumentos lugar, adjetivo y sustantivo para que su función sea operativa."
-  CorrectAnswer: mad_libs(adjectivo = "", lugar = "", sustantivo = "")
+  CorrectAnswer: mad_libs(lugar = "", adjectivo = "",  sustantivo = "")
   AnswerTests: expr_uses_func('mad_libs')
   Hint: 'Use la función mad_libs y asegúrese de nombrarlos argumentos lugar, adjetivo, y sustantivo.'
 

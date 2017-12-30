@@ -30,11 +30,13 @@
 # desempaquetar los argumentos adecuados de la elipsis .
 
 mad_libs <- function(...){
-  # Haga el desempaquetado de su argumento aquí!
-  
-  # No modifique ningún código debajo de este comentario.
-  # Tenga en cuenta las variables que se necesitan en orden, para hacer que el 
-  # código de abajo sea funcional!
+  # Haga el desempaquetado de su argumento aquí!
+  args <- list(...)
+  lugar <- lugar[["lugar"]]
+  adjetivo <- args[["adjectivo"]]
+  sustantivo <- args[["sustantivo"]]
+  # No modifique ningún código debajo de este comentario.
+  # Tenga en cuenta las variables que se necesitan en orden, para hacer que el 
+  # código de abajo sea funcional!
   paste("Noticias desde", lugar, "en la actualidad, donde los estudiantes", adjetivo, "salieron a las calles en protesta por el nuevo", sustantivo, "que se está instalando en el campus.")
 }
-
