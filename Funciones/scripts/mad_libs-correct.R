@@ -31,7 +31,7 @@ mad_libs <- function(...){
   # Do your argument unpacking here!
   args <- list(...)
   lugar <- lugar[["lugar"]]
-  adjetivo <- args[["adjectivo"]]
+  adjetivo <- args[["adjetivo"]]
   sustantivo <- args[["sustantivo"]]
   # Don't modify any code below this comment.
   # Notice the variables you'll need to create in order for the code below to

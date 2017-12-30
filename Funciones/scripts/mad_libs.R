@@ -31,10 +31,7 @@
 
 mad_libs <- function(...){
   # Haga el desempaquetado de su argumento aquí!
-  args <- list(...)
-  lugar <- lugar[["lugar"]]
-  adjetivo <- args[["adjectivo"]]
-  sustantivo <- args[["sustantivo"]]
+  
   # No modifique ningún código debajo de este comentario.
   # Tenga en cuenta las variables que se necesitan en orden, para hacer que el 
   # código de abajo sea funcional!
