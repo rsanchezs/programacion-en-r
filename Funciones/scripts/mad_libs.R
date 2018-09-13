@@ -36,4 +36,4 @@ mad_libs <- function(...){
   # Tenga en cuenta las variables que se necesitan en orden, para hacer que el 
   # código de abajo sea funcional!
   paste("Noticias desde", lugar, "en la actualidad, donde los estudiantes", adjetivo, "salieron a las calles en protesta por el nuevo", sustantivo, "que se está instalando en el campus.")
-}
+}  
